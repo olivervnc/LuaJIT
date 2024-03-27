@@ -9,4 +9,4 @@ jobs:
         - uses: actions/checkout@v4
         # - uses: microsoft/setup-msbuild@v2
         - uses: egor-tensin/setup-mingw@v2
-        - run: (mingw32-make && ls src)
+        - run: (mingw64-make && ls src)
