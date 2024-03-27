@@ -4,9 +4,10 @@ permissions:
   contents: read
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v4
         # - uses: microsoft/setup-msbuild@v2
         - uses: egor-tensin/setup-mingw@v2
-        - run: (mingw32-make && ls src)
+        # - run: (mingw32-make && ls src)
+        - run: make HOST_CC="gcc" CROSS=amd64-mingw32msvc- TARGET_SYS=Windows
